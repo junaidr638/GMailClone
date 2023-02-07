@@ -1,4 +1,4 @@
-package com.example.gmailclone.ui.theme
+package com.example.gmailclone.models
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
@@ -14,17 +14,17 @@ sealed class DrawerMenuData(
         title = "All inboxes"
     )
 
-    object Primary:DrawerMenuData(
+    object Primary: DrawerMenuData(
         icon = Icons.Outlined.Inbox,
         title = "Primary"
     )
 
-    object Social:DrawerMenuData(
+    object Social: DrawerMenuData(
         icon = Icons.Outlined.Person,
         title = "Social"
     )
 
-    object Promotions:DrawerMenuData(
+    object Promotions: DrawerMenuData(
         icon = Icons.Outlined.Tag,
         title = "Promotions"
     )
