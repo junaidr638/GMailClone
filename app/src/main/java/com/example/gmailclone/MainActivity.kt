@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,7 +37,8 @@ fun GmailApp() {
     val scaffoldState = rememberScaffoldState()
     val coroutineScope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
-    Scaffold(topBar = { HomeAppBar(scaffoldState,coroutineScope) },
+    val openDialog = remember{ mutableStateOf(true) }
+    Scaffold(topBar = { HomeAppBar(scaffoldState,coroutineScope,openDialog) },
               drawerContent = {
                   GmailDrawerMenu(scrollState = scrollState)
               },
